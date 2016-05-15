@@ -4,6 +4,7 @@
   "description": "Adds state driven focus property to Brisky",
   "main": "lib/index.js",
   "scripts": {
+    "start": "watchify-server test/index.js",
     "test": "node test | tap-difflet",
     "watch": "nodemon test | tap-difflet",
     "cover": "istanbul cover --report none --print detail test/index.js",
@@ -26,14 +27,25 @@
     "element",
     "DOM"
   ],
+  "browser": {
+    "./lib/focus": "./lib/focus/browser"
+  },
   "dependencies": {
-    "brisky-core": "vigour-io/brisky-core"
+    "brisky-core": "vigour-io/brisky-core",
+    "brisky-class": "vigour-io/brisky-class"
   },
   "contributors": [
     "Jim de Beer <jim@vigour.io>",
     "Youri Daamen <youri@vigour.io>"
   ],
   "devDependencies": {
-    "vigour-doc": "^1.1.5"
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.3",
+    "nodemon": "^1.9.1",
+    "tap-difflet": "0.4.0",
+    "tape": "^4.4.0",
+    "vigour-doc": "^1.1.5",
+    "vigour-state": "^1.6.3",
+    "watchify-server": "^1.0.2"
   }
 }
