@@ -31,8 +31,8 @@
     "./lib/focus": "./lib/focus/browser"
   },
   "dependencies": {
-    "brisky-core": "vigour-io/brisky-core",
-    "brisky-class": "vigour-io/brisky-class"
+    "brisky-class": "0.0.2",
+    "brisky-core": "0.0.1"
   },
   "contributors": [
     "Jim de Beer <jim@vigour.io>",
@@ -45,7 +45,6 @@
     "tap-difflet": "0.4.0",
     "tape": "^4.4.0",
     "vigour-doc": "^1.1.5",
-    "vigour-state": "^1.6.3",
     "watchify-server": "^1.0.2"
   }
 }
