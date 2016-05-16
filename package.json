@@ -31,7 +31,7 @@
     "./lib/focus": "./lib/focus/browser"
   },
   "dependencies": {
-    "brisky-class": "0.0.2",
+    "brisky-class": "^1.0.0",
     "brisky-core": "^1.0.0"
   },
   "contributors": [
