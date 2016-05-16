@@ -22,9 +22,9 @@ test('adding focus property', function (t) {
     menu: {
       focus: '$root.menu.items.1',
       items: [
-        { title:'discover!' },
-        { title:'shows!' },
-        { title:'channels!' }
+        { title: 'discover!' },
+        { title: 'shows!' },
+        { title: 'channels!' }
       ]
     }
   })
