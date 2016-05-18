@@ -1,6 +1,6 @@
 {
   "name": "brisky-focus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Adds state driven focus property to Brisky",
   "main": "lib/index.js",
   "scripts": {
