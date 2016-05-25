@@ -11,7 +11,7 @@ test('adding focus property', function (t) {
 
   elem = new Element({
     $: 'menu.items.$any',
-    Child: {
+    child: {
       focus: { $: '$parent.$parent.focus' },
       text: { $: 'title' }
     }
@@ -29,6 +29,6 @@ test('adding focus property', function (t) {
     }
   })
 
-  t.true(elem.Child.prototype.hasEvents, 'adds hasEvents on element')
-  t.equals(node.childNodes[0]._, elem.Child.prototype, 'stores element on node')
+  t.true(elem.child.prototype.hasEvents, 'adds hasEvents on element')
+  t.equals(node.childNodes[0]._, elem.child.prototype, 'stores element on node')
 })

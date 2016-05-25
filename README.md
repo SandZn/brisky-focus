@@ -33,5 +33,5 @@ const state = {
   }
 }
 
-document.body.appendChild(render(carousel, state))
+document.body.appendchild(render(carousel, state))
 ```
