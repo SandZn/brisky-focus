@@ -2,7 +2,7 @@
 const render = require('brisky-core/render')
 const Element = require('brisky-core')
 const test = require('tape')
-const parse = require('parse-element')
+// const parse = require('parse-element')
 
 Element.prototype.inject(require('../lib'))
 
@@ -31,6 +31,5 @@ test('class', function (t) {
     global.document.body.appendChild(node)
   }
 
-  parse(node)
   t.end()
 })
