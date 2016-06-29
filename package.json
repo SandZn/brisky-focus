@@ -4,7 +4,7 @@
   "description": "Adds state driven focus property to Brisky",
   "main": "lib/index.js",
   "scripts": {
-    "start": "watchify-server test/index.js",
+    "start": "budo ./test/ -p 8080 --live",
     "test": "node test | tap-difflet && standard",
     "watch": "nodemon test | tap-difflet",
     "cover": "istanbul cover --report none --print detail test/index.js",
@@ -57,11 +57,12 @@
     "coveralls": "^2.11.9",
     "istanbul": "^0.4.3",
     "nodemon": "^1.9.1",
+    "parse-element": "^2.0.1",
     "pre-commit": "^1.1.3",
     "standard": "^7.0.1",
     "tap-difflet": "0.4.0",
     "tape": "^4.4.0",
     "vigour-doc": "^1.1.5",
-    "watchify-server": "^1.0.2"
+    "budo": "^8.2.2"
   }
 }
