@@ -5,7 +5,7 @@ const test = require('tape')
 
 Element.prototype.inject(require('../lib'))
 
-test('focus - add focus property', function (t) {
+test('basic - add focus property', function (t) {
   var elem, node
   t.plan(2)
 

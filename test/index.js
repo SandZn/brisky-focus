@@ -1,3 +1,3 @@
 'use strict'
 require('./basic')
-require('./class')
+// require('./class')
