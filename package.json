@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "budo ./test/ -p 8080 --live",
-    "test": "node test | tap-difflet && standard",
+    "test": "(ducktape; node test) | tap-difflet && standard",
     "watch": "nodemon test | tap-difflet",
     "cover": "istanbul cover --report none --print detail test/index.js",
     "docs": "node_modules/vigour-doc/bin/vdoc",
@@ -31,6 +31,7 @@
     "./lib/focus": "./lib/focus/browser"
   },
   "dependencies": {
+    "ducktape": "^1.0.0",
     "brisky-class": "^1.1.2",
     "vigour-ua": "^2.0.0",
     "brisky-props": "^1.1.1",
