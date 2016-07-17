@@ -52,3 +52,13 @@ test('basic - focus property', function (t) {
   t.equal(state.menu.focus.val, state.get('menu.items.1'), 'correct "focus"')
   t.end()
 })
+
+test('basic - error', function (t) {
+  try {
+    render({ key: 'app', focus: 'lulz' })
+    t.fail('should crash')
+  } catch (e) {
+    t.equal(e.message, 'no subscription passed to focus "app"', 'correct error')
+  }
+  t.end()
+})
