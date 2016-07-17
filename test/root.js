@@ -3,7 +3,7 @@ const render = require('brisky-core/render')
 const Element = require('brisky-core')
 Element.prototype.inject(require('../lib'))
 const test = require('tape')
-// const trigger = require('brisky-events/trigger')
+const trigger = require('brisky-events/trigger')
 const s = require('vigour-state/s')
 const browser = require('./browser')
 
@@ -19,6 +19,7 @@ test('root - switch focus', function (t) {
       ]
     }
   })
+
   const app = browser(
     render({
       filterField: {
@@ -34,8 +35,9 @@ test('root - switch focus', function (t) {
       }
     }, state)
   )
-
-  console.log(app)
-
+  t.equal(app.childNodes[1].childNodes[0].className, 'focus', 'initial focus')
+  trigger(app.childNodes[0], 'focus')
+  t.equal(app.childNodes[1].childNodes[0].className, 'focus', 'no change on menu item after focus')
+  t.equal(app.childNodes[0].className, 'focus', 'changed input item after focus')
   t.end()
 })
