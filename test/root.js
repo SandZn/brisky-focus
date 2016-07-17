@@ -3,7 +3,7 @@ const render = require('brisky-core/render')
 const Element = require('brisky-core')
 Element.prototype.inject(require('../lib'))
 const test = require('tape')
-const trigger = require('brisky-events/trigger')
+// const trigger = require('brisky-events/trigger')
 const s = require('vigour-state/s')
 const browser = require('./browser')
 
