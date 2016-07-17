@@ -35,9 +35,41 @@ test('root - switch focus', function (t) {
       }
     }, state)
   )
-  t.equal(app.childNodes[1].childNodes[0].className, 'focus', 'initial focus')
-  trigger(app.childNodes[0], 'focus')
-  t.equal(app.childNodes[1].childNodes[0].className, 'focus', 'no change on menu item after focus')
-  t.equal(app.childNodes[0].className, 'focus', 'changed input item after focus')
+  const input = app.childNodes[0]
+  const item = app.childNodes[1].childNodes[0]
+
+  t.equal(item.className, 'focus', 'initial focus')
+  trigger(input, 'focus')
+  t.equal(item.className, 'focus', 'no change on menu item after focus')
+  t.equal(input.className, 'focus', 'changed input item after focus')
+  t.end()
+})
+
+test('root - no root focus', function (t) {
+  const state = s({
+    menu: {
+      focus: '$root.menu.items.0',
+      items: [
+        { title: 'discover!' },
+        { title: 'shows!' },
+        { title: 'channels!' }
+      ]
+    }
+  })
+
+  const app = browser(
+    render({
+      menu: {
+        $: 'menu.items.$any',
+        child: {
+          focus: { $: '$parent.$parent.focus' },
+          text: { $: 'title' }
+        }
+      }
+    }, state)
+  )
+  const item = app.childNodes[0].childNodes[0]
+  trigger(item, 'focus')
+  t.equal(item.className, 'focus', 'changed item after focus')
   t.end()
 })
