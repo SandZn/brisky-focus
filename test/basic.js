@@ -5,6 +5,7 @@ const test = require('tape')
 Element.prototype.inject(require('../lib'))
 const trigger = require('brisky-events/trigger')
 const s = require('vigour-state/s')
+const browser = require('./browser')
 
 test('basic - focus property', function (t) {
   const elem = new Element({
@@ -26,15 +27,7 @@ test('basic - focus property', function (t) {
       ]
     }
   })
-  const app = render(elem, state)
-
-  if ('body' in document) {
-    document.body.appendChild(app)
-    const css = document.createElement('link')
-    css.href = './test/style.css'
-    css.rel = 'stylesheet'
-    document.head.appendChild(css)
-  }
+  const app = browser(render(elem, state))
 
   t.true(elem.child.prototype.hasEvents, 'adds hasEvents on element')
   t.equal(state.menu.focus.val, state.get('menu.items.0'), 'correct initial "menu.focus"')
