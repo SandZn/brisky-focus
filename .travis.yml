@@ -1,4 +1,5 @@
 # .travis.yml
+before_install: if [[ `npm -v` == 2* ]]; then npm i -g npm; fi
 language: node_js
 node_js:
   - '5.4'
